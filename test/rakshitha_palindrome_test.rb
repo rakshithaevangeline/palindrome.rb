@@ -4,22 +4,26 @@ require "test_helper"
 
 class RakshithaPalindromeTest < Minitest::Test
   def test_non_palindrome
-   refute "foo".palindrome?, false
+   assert !"foo".palindrome?
   end
 
   def test_literal_palindrome
-    refute !"racecar".palindrome?
+    assert "racecar".palindrome?
   end
 
   def test_empty_string
-    skip
+    assert "".blank?
   end
 
   def test_palindrome_with_punctuation
-    skip
+    assert_equal "A man, a plan, a canal, - Panama".palindrome?, true 
   end
 
   def test_mixed_case_palindrome
-    refute !"RaCecar".palindrome?
+    assert "RaCecar".palindrome?
+  end
+
+  def test_letters
+    assert_equal "Madam I'm Adam.".letters, "madamimadam"
   end
 end
